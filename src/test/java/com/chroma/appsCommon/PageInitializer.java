@@ -1,16 +1,16 @@
 package com.chroma.appsCommon;
-import com.chroma.pages.SamplePage;
+import com.chroma.pages.LoginPage;
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
 
-    // Sample of instantiating an instance
+    // Instantiating LoginPage
 
-    public static SamplePage samplePage;
+    public static LoginPage loginPage;
 
     public void initializeAllPages() {
 
-        samplePage = new SamplePage();
+        loginPage = new LoginPage();
 
     }
 
