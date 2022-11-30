@@ -1,6 +1,7 @@
 package com.chroma.commonMethods;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.utils.CucumberLogUtils;
 
 public class LoginSteps extends PageInitializer{
 
@@ -8,6 +9,8 @@ public class LoginSteps extends PageInitializer{
 
         loginPage.userNameTextBox.sendKeys(username);
         loginPage.passwordTextBox.sendKeys(password);
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
         loginPage.signInButton.click();
 
     }   
