@@ -17,6 +17,6 @@ import cucumber.api.junit.Cucumber;
 		strict = true
 ) 
 
-public class RunApplicationNameRegressionTest {
+public class RunCTSMSRegressionTest {
     
 }

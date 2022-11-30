@@ -23,16 +23,14 @@ public class LoginStepDef extends PageInitializer {
     @When("user logs in with username {string} and password {string}")
     public void user_logs_in_with_username_and_password(String username, String password) {
         LoginSteps.loginCredentials(username, password);
-    
+
     }
 
-    @Then("the home page is displayed")
+    @Then("the dashboard page is displayed")
     public void the_home_page_is_displayed() {
 
-        
-        boolean isChromaTechDisplayed = loginPage.homePageText.isDisplayed();
+        boolean isChromaTechDisplayed = loginPage.dashboardPageText.isDisplayed();
         Assert.assertTrue(isChromaTechDisplayed);
-        //driver.switchTo().alert().accept();
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
     }
