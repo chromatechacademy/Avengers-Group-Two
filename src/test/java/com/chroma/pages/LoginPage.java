@@ -1,5 +1,7 @@
 package com.chroma.pages;
 
+import javax.lang.model.element.Element;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,6 +25,10 @@ public class LoginPage {
     /* Chroma Tech Academy text on dashboard page */
     @FindBy(xpath = "//span[contains(text(),'Chroma Tech Academy')]")
     public WebElement dashboardPageText;
+
+    /*  */
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    public WebElement invalidCredentialsText;
 
     public LoginPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
