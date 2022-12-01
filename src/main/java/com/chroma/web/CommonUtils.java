@@ -181,22 +181,6 @@ public class CommonUtils extends WebDriverUtils {
 			System.out.println("Frame is not present.");
 		}
 	}
-	/**
-	 * use this method to try to run code and if an exception is thrown Assertion Error! catch Exception but don't end execution of the test case
-	 *   
-	 * @param flag
-	 */
-
-	public static void assertTrue(boolean flag){
-
-		try{
-			Assert.assertTrue(flag);
-		}catch(AssertionError e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
 	
 	/**
 	 * This method will switch to the frame
