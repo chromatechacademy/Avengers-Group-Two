@@ -26,7 +26,8 @@ public class LoginPage {
     @FindBy(xpath = "//span[contains(text(),'Chroma Tech Academy')]")
     public WebElement dashboardPageText;
 
-    /*  */
+      
+    /* Chroma Tech Academy invalid login message */
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement invalidCredentialsText;
 
