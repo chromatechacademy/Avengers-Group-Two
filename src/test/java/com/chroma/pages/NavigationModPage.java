@@ -5,6 +5,10 @@ import org.openqa.selenium.WebElement;
 
 import com.chroma.web.WebDriverUtils;
 
+/**
+ * use below mothod Dynamic Xpath for module
+ */
+
 public class NavigationModPage {
     public static WebElement dynamicModule(String module){
 

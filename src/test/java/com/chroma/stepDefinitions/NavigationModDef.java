@@ -20,9 +20,57 @@ public class NavigationModDef {
       Assert.assertTrue(isStudentInformationDisplayed);
                 CucumberLogUtils.logExtentScreenshot();
                 CucumberLogUtils.logScreenShot();
-                
-               
 
+        boolean isfeesCollectionDisplayed = NavigationModPage.dynamicModule(feesCollection).getText()
+                .contentEquals(feesCollection);
+               
+      Assert.assertTrue(isfeesCollectionDisplayed);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();        
+
+        
+       boolean isincomeDisplayed = NavigationModPage.dynamicModule(income).getText()
+                .contentEquals(income);
+               
+      Assert.assertTrue(isincomeDisplayed);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();
+
+                boolean isexpensesDisplayed = NavigationModPage.dynamicModule(expenses).getText()
+                .contentEquals(expenses);
+               
+      Assert.assertTrue(isexpensesDisplayed);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();                
+                
+                boolean isacademicsDisplayed = NavigationModPage.dynamicModule(academics).getText()
+                .contentEquals(academics);
+               
+      Assert.assertTrue(isacademicsDisplayed);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();
+
+                boolean ishumanResourceDisplayed = NavigationModPage.dynamicModule(humanResource).getText()
+                .contentEquals(humanResource);
+               
+      Assert.assertTrue(ishumanResourceDisplayed);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();   
+                
+                boolean ishomeworkDisplayed = NavigationModPage.dynamicModule(homework).getText()
+                .contentEquals(homework);
+               
+      Assert.assertTrue(ishomeworkDisplayed);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();
+
+                boolean isreportsDisplayed = NavigationModPage.dynamicModule(reports).getText()
+                .contentEquals(reports);
+               
+      Assert.assertTrue(isreportsDisplayed);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();                
+     
           
 }
 
