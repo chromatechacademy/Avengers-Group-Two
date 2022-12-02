@@ -1,6 +1,6 @@
 Feature: Display menu options on Student Information module 
 
-  @Progression @Sergey @AGT-4
+  @Regression @Sergey @AGT-4
   Scenario: menu option is being extended by clicking on Student Information
     Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login" 
     When user logs in with username "general@teacher.com" and password "123456"
