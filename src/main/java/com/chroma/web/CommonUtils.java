@@ -20,8 +20,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.fasterxml.jackson.databind.jsontype.impl.StdTypeResolverBuilder;
-
 public class CommonUtils extends WebDriverUtils {
 
 
@@ -159,9 +157,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * 
 	 * @param nameOrId
 	 */
-
 	public static void switchToFrame(String nameOrId) {
-
 		try {
 			driver.switchTo().frame(nameOrId);
 		} catch (NoSuchFrameException e) {
@@ -181,10 +177,8 @@ public class CommonUtils extends WebDriverUtils {
 			System.out.println("Frame is not present.");
 		}
 	}
-	
 	/**
 	 * This method will switch to the frame
-	 * 
 	 * @param index
 	 */
 	public static void switchToFrame(int index) {
@@ -282,7 +276,6 @@ public class CommonUtils extends WebDriverUtils {
 	public static void waitForClickability(WebElement element) {
 		getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
 	}
-
 	/**
 	 * This method will wait until element becomes visible
 	 * 
@@ -291,7 +284,6 @@ public class CommonUtils extends WebDriverUtils {
 	public static void waitForVisibility(WebElement element) {
 		getWaitObject().until(ExpectedConditions.visibilityOf(element));
 	}
-
 	/**
 	 * This method will wait until element becomes invisible
 	 * 
