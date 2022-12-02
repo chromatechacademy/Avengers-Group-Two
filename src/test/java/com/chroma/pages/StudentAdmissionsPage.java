@@ -81,7 +81,7 @@ public class StudentAdmissionsPage {
     @FindBy(xpath = "//input[@name='mother_name']")
     public WebElement enterMotherJob;
 
-    @FindBy(xpath = "//input[@value='father']")
+    @FindBy(xpath = "(//input[@value='father'])[1]")
     public WebElement selectsGaurdian;
 
     @FindBy(xpath = "//input[@name='guardian_email']")

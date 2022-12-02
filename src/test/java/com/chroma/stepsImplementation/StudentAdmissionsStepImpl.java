@@ -39,20 +39,21 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
         // studentAdmissionsPage.enterGaurdianAddress.sendKeys("CandyLane drive");
         // studentAdmissionsPage.saveButton.click();
 
-        Select dropdownClass = new Select(driver.findElement(By.xpath("//select[@name='class_id']")));
-        dropdownClass.selectByValue("SDET");
+        // Select dropdownClass = new Select(driver.findElement(By.xpath("//select[@name='class_id']")));
+        
+        // dropdownClass.selectByValue("SDET");
 
-        Select dropdownSection = new Select(driver.findElement(By.xpath("//select[@name='section_id']")));
-        dropdownSection.selectByValue("Mobile Test Automation");
+        // Select dropdownSection = new Select(driver.findElement(By.xpath("//select[@name='section_id']")));
+        // dropdownSection.selectByValue("Mobile Test Automation");
 
-        Select dropdownGender = new Select(driver.findElement(By.xpath("//select[@name='gender']")));
-        dropdownGender.selectByValue("Female");
+        // Select dropdownGender = new Select(driver.findElement(By.xpath("//select[@name='gender']")));
+        // dropdownGender.selectByValue("Female");
 
-        Select dropdownCategory = new Select(driver.findElement(By.xpath("//select[@name='category_id']")));
-        dropdownCategory.selectByValue("Testing sample");
+        // Select dropdownCategory = new Select(driver.findElement(By.xpath("//select[@name='category_id']")));
+        // dropdownCategory.selectByValue("Testing sample");
 
-        Select dropdownBlood = new Select(driver.findElement(By.xpath("//select[@name='blood_group']")));
-        dropdownBlood.selectByValue("O+");
+        // Select dropdownBlood = new Select(driver.findElement(By.xpath("//select[@name='blood_group']")));
+        // dropdownBlood.selectByValue("O+");
 
 
 
