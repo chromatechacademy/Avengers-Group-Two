@@ -9,6 +9,22 @@ import com.chroma.web.WebDriverUtils;
 
 public class DashboardPageAcademics extends PageInitializer{
 
+    /*Locator for Expense Module */
+    @FindBy(xpath = "//span[normalize-space()='Expenses']")
+    public WebElement expenseModuleButton;
+
+    /*Locator for Add Expense button */
+    @FindBy(xpath = "//body[1]/div[1]/aside[1]/div[1]/section[1]/ul[2]/li[4]/ul[1]/li[1]/a[1]")
+    public WebElement addExpenseButton;
+
+    /*Locator for Search Expense button */
+    @FindBy(xpath = "//a[normalize-space()='Search Expense']")
+    public WebElement searchExpenseButton;
+
+    /*Loactor for Expense Head button */
+    @FindBy(xpath = "//a[normalize-space()='Expense Head']")
+    public WebElement expenseHeadButton;
+
     /*Locator for Academics Module Button */
     @FindBy(xpath = "//*[@id='sibe-box']/ul[2]/li[5]")
     public WebElement academicsModuleButton;
