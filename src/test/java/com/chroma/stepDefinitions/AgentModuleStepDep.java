@@ -20,6 +20,5 @@ public void agents_page_displays() {
     CucumberLogUtils.logExtentScreenshot();
     CucumberLogUtils.logScreenShot(); 
 }
-
 }
 

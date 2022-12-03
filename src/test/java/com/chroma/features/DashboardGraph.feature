@@ -1,6 +1,5 @@
 Feature: Dashboard Graph Text
 
-
 @Regression @joyce @AGT-43
 Scenario Outline: In Admin view the graph displays with the header text overview
     Given a user is on the appropriate login page <Website>

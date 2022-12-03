@@ -14,7 +14,5 @@ public class AgentsModuleImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         realEstateLoginPage.realEstateLoginButton.click();
 
-    } 
-
-    
+    }    
 }

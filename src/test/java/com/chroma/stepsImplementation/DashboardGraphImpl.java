@@ -12,12 +12,8 @@ public class DashboardGraphImpl extends PageInitializer {
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
         realEstateLoginPage.realEstateLoginButton.click();
-
-    } 
-    
-        
-       
-    }
+     }     
+}
 
 
     
