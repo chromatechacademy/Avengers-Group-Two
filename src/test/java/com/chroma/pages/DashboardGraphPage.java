@@ -27,13 +27,5 @@ public class DashboardGraphPage{
     public DashboardGraphPage(){
 
         PageFactory.initElements(WebDriverUtils.driver, this); 
-    }
-
-
-
-    
-
-
-
-    
+    } 
 }
