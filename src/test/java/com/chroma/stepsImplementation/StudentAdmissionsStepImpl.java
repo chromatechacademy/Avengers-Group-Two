@@ -1,65 +1,71 @@
 package com.chroma.stepsImplementation;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
-
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.utils.CucumberLogUtils;
+import com.chroma.web.CommonUtils;
+import com.chroma.web.WebDriverUtils;
 
+public class StudentAdmissionsStepImpl extends PageInitializer {
 
-public class StudentAdmissionsStepImpl extends PageInitializer{
-    
-    /** 
-     * Use this method to enter information for Admissions page
-     * 
-     */
-    public static void studentAdmissionsCredentials(String admissionNo, String rollNum, String classSelection, String sectionSelection, String firstName,
-    String lastName,
-    String genderSelection, String dateOfBirth, String categorySelection, String email,
-    String bloodGroupSelection, String mobileNum,
-    String height, String weight, String fatherName, String fatherPhone, String fatherOccupation,
-    String motherName,
-    String motherOccupation, String gaurdian, String gaurdianEmail, String guardianAddress){
+        /**
+         * Use this method to enter credentials for Admissions page
+         * 
+         */
+        public static void studentAdmissionsCredentials(String admissionNo, String rollNum, String classSelection,
+                        String sectionSelection, String firstName,
+                        String lastName,
+                        String genderSelection, String dateOfBirth, String categorySelection, String email,
+                        String bloodGroupSelection, String mobileNum,
+                        String height, String weight, String fatherName, String fatherPhone, String fatherOccupation,
+                        String motherName,
+                        String motherOccupation, String gaurdian, String gaurdianEmail, String guardianAddress) {
 
-    
-        // studentAdmissionsPage.admissionNumber.sendKeys("20172020");
-        // studentAdmissionsPage.rollNumber.sendKeys("1");
-        // studentAdmissionsPage.enterFirstName.sendKeys("Shine");
-        // studentAdmissionsPage.enterLastName.sendKeys("Bright");
-        // studentAdmissionsPage.enterDOB.sendKeys("08/22/1989");
-        // studentAdmissionsPage.emailAddress.sendKeys("studentchroma@gmail.com");
-        // studentAdmissionsPage.phoneNumber.sendKeys("1234567890");
-        // studentAdmissionsPage.enterHeight.sendKeys("5'5");
-        // studentAdmissionsPage.enterWeight.sendKeys("120");
-        // studentAdmissionsPage.enterFatherName.sendKeys("Abraham");
-        // studentAdmissionsPage.enterFatherNumber.sendKeys("1234567890");
-        // studentAdmissionsPage.enterFatherJob.sendKeys("President");
-        // studentAdmissionsPage.enterMotherName.sendKeys("Aretha");
-        // studentAdmissionsPage.enterMotherJob.sendKeys("Singer");
-        // studentAdmissionsPage.enterGaurdianEmail.sendKeys("studentchroma@gmail.com");
-        // studentAdmissionsPage.enterGaurdianAddress.sendKeys("CandyLane drive");
-        // studentAdmissionsPage.saveButton.click();
+                studentAdmissionsPage.admissionNumber.sendKeys(admissionNo);
+                studentAdmissionsPage.rollNumber.sendKeys(rollNum);
+                CommonUtils.selectDropDownValue(classSelection,
+                                driver.findElement(By.xpath("//select[@name='class_id']")));
+                CommonUtils.selectDropDownValue(sectionSelection,
+                                driver.findElement(By.xpath("//select[@name='section_id']")));
+                studentAdmissionsPage.enterFirstName.sendKeys(firstName);
+                studentAdmissionsPage.enterLastName.sendKeys(lastName);
+                CommonUtils.selectDropDownValue(genderSelection,
+                                WebDriverUtils.driver.findElement(By.xpath("//select[@name='gender']")));
+                studentAdmissionsPage.enterDOB.sendKeys(dateOfBirth);
+                CommonUtils.selectDropDownValue(categorySelection,
+                                driver.findElement(By.xpath("(//select[@name='category_id'])[1]")));
+                studentAdmissionsPage.emailAddress.sendKeys(email);
+                CommonUtils.selectDropDownValue(bloodGroupSelection,
+                                driver.findElement(By.xpath("//select[@name='blood_group']")));
+                studentAdmissionsPage.phoneNumber.sendKeys(mobileNum);
+                studentAdmissionsPage.enterHeight.sendKeys(height);
+                studentAdmissionsPage.enterWeight.sendKeys(weight);
+                studentAdmissionsPage.enterFatherName.sendKeys(fatherName);
+                studentAdmissionsPage.enterFatherNumber.sendKeys(fatherPhone);
+                studentAdmissionsPage.enterFatherJob.sendKeys(fatherOccupation);
+                studentAdmissionsPage.enterMotherName.sendKeys(motherName);
+                studentAdmissionsPage.enterMotherJob.sendKeys(motherOccupation);
+                studentAdmissionsPage.selectsGaurdian.click();
+                studentAdmissionsPage.enterGaurdianEmail.sendKeys(gaurdianEmail);
+                studentAdmissionsPage.enterGaurdianAddress.sendKeys(guardianAddress);
+                studentAdmissionsPage.saveButton.click();
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();
+        }
 
-        // Select dropdownClass = new Select(driver.findElement(By.xpath("//select[@name='class_id']")));
-        
-        // dropdownClass.selectByValue("SDET");
+        public static void studentDetailsPage(String classSelection, String sectionSelection, String firstName) {
+                CommonUtils.selectDropDownValue(classSelection,
+                                driver.findElement(By.xpath("//select[@name='class_id']")));
+                CommonUtils.selectDropDownValue(sectionSelection,
+                                driver.findElement(By.xpath("//select[@name='section_id']")));
+                studentAdmissionsPage.searchByKeywordTextBox.sendKeys(firstName);
+        }
 
-        // Select dropdownSection = new Select(driver.findElement(By.xpath("//select[@name='section_id']")));
-        // dropdownSection.selectByValue("Mobile Test Automation");
+        public static void bulkDeletePage(String classSelection, String sectionSelection) {
+                CommonUtils.selectDropDownValue(classSelection,
+                                driver.findElement(By.xpath("//select[@name='class_id']")));
+                CommonUtils.selectDropDownValue(sectionSelection,
+                                driver.findElement(By.xpath("//select[@name='section_id']")));
+        }
 
-        // Select dropdownGender = new Select(driver.findElement(By.xpath("//select[@name='gender']")));
-        // dropdownGender.selectByValue("Female");
-
-        // Select dropdownCategory = new Select(driver.findElement(By.xpath("//select[@name='category_id']")));
-        // dropdownCategory.selectByValue("Testing sample");
-
-        // Select dropdownBlood = new Select(driver.findElement(By.xpath("//select[@name='blood_group']")));
-        // dropdownBlood.selectByValue("O+");
-
-
-
-    }
-    
-
-
-    
 }

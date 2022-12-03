@@ -1,28 +1,22 @@
 package com.chroma.stepDefinitions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentAdmissionsPage;
 import com.chroma.stepsImplementation.StudentAdmissionsStepImpl;
 import com.chroma.utils.CucumberLogUtils;
-import com.chroma.web.WebDriverUtils;
-
 import cucumber.api.java.en.Then;
 
 public class StudentAdmissionsStepDef extends PageInitializer {
 
     @Then("user clicks {string}")
     public void user_clicks(String studentInformation) {
-        StudentAdmissionsPage.dynamicModule(studentInformation).click();
+        studentAdmissionsPage.studentInformationButton.click();
     }
 
     @Then("clicks {string}")
     public void clicks(String studentAdmission) {
-        StudentAdmissionsPage.dynamicModuleList(studentAdmission).click();
+        studentAdmissionsPage.studentAdmissionButton.click();
     }
 
     @Then("Student Admission page displays")
@@ -31,57 +25,62 @@ public class StudentAdmissionsStepDef extends PageInitializer {
         Assert.assertTrue(isStudentAdmissionPageDisplayed);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
+    }
+
+    @Then("user enters student credentials {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
+    public void user_enters_student_credentials(String admissionNo, String rollNum, String classSelection,
+            String sectionSelection, String firstName, String lastName, String genderSelection, String dateOfBirth,
+            String categorySelection, String email, String bloodGroupSelection,
+            String mobileNum, String height, String weight, String fatherName, String fatherPhone,
+            String fatherOccupation, String motherName, String motherOccupation,
+            String gaurdian, String gaurdianEmail, String guardianAddress) {
+
+        StudentAdmissionsStepImpl.studentAdmissionsCredentials(admissionNo, rollNum, classSelection, sectionSelection,
+                firstName, lastName, genderSelection, dateOfBirth, categorySelection, email, bloodGroupSelection,
+                mobileNum, height, weight, fatherName, fatherPhone, fatherOccupation, motherName, motherOccupation,
+                gaurdian, gaurdianEmail, guardianAddress);
+    }
+
+    @Then("clicks on {string}")
+    public void clicks_on(String studentDetails) {
+        studentAdmissionsPage.studentDetailsButton.click();
 
     }
 
-    @Then("user enters student's credentials {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string},{string},{string}, {string}, {string},{string}, {string}, {string}, {string}, {string}")
-    public void user_enters_student_s_credentials(
-            String admissionNo, String rollNum, String classSelection, String sectionSelection, String firstName,
-            String lastName,
-            String genderSelection, String dateOfBirth, String categorySelection, String email,
-            String bloodGroupSelection, String mobileNum,
-            String height, String weight, String fatherName, String fatherPhone, String fatherOccupation,
-            String motherName,
-            String motherOccupation, String gaurdian, String gaurdianEmail, String guardianAddress) {
+    @Then("user selects {string}, selects {string}, enters {string}")
+    public void user_selects_selects_enters(String classSelection, String sectionSelection, String firstName) {
+        StudentAdmissionsStepImpl.studentDetailsPage(classSelection, sectionSelection, firstName);
+        studentAdmissionsPage.searchButton.click();
 
-        
+    }
 
-        
+    @Then("Select Criteria page displays and student is viewed")
+    public void select_Criteria_page_displays_and_student_is_viewed() {
+        boolean isSelectCriteriaPageDisplayed = studentAdmissionsPage.selectCriteriaPageDisplays.isDisplayed();
+        Assert.assertTrue(isSelectCriteriaPageDisplayed);
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
+    }
 
-        Select dropdownGender = new Select(driver.findElement(By.xpath("//select[@name='gender']")));
-        dropdownGender.selectByVisibleText("Female");
+    @Then("navigates to {string}")
+    public void navigates_to(String string) {
+        studentAdmissionsPage.bulkDeleteButton.click();
 
-        Select dropdownCategory = new Select(driver.findElement(By.xpath("//select[@name='category_id']")));
-        dropdownCategory.selectByVisibleText("Testing sample");
+    }
 
-        Select dropdownBlood = new Select(driver.findElement(By.xpath("//select[@name='blood_group']")));
-        dropdownBlood.selectByVisibleText("O+");
+    @Then("user selects {string}, selects {string}")
+    public void user_selects_selects(String classSelection, String sectionSelection) {
+        StudentAdmissionsStepImpl.bulkDeletePage(classSelection, sectionSelection);
+        studentAdmissionsPage.searchButtonBulkDeletePage.click();
 
-        studentAdmissionsPage.admissionNumber.sendKeys("20172021");
-        studentAdmissionsPage.rollNumber.sendKeys("1");
-        
-        Select dropdownClass = new Select(driver.findElement(By.xpath("//select[@name='class_id']")));
-        dropdownClass.selectByVisibleText("SDET");
+    }
 
-        Select dropdownSection = new Select(driver.findElement(By.xpath("//select[@name='section_id']")));
-        dropdownSection.selectByVisibleText("Mobile Test Automation");
-        
-        studentAdmissionsPage.enterFirstName.sendKeys("Shine");
-        studentAdmissionsPage.enterLastName.sendKeys("Bright");
-        studentAdmissionsPage.enterDOB.sendKeys("08/22/1989");
-        studentAdmissionsPage.emailAddress.sendKeys("studentchroma@gmail.com");
-        studentAdmissionsPage.phoneNumber.sendKeys("1234567890");
-        studentAdmissionsPage.enterHeight.sendKeys("5'5");
-        studentAdmissionsPage.enterWeight.sendKeys("120");
-        studentAdmissionsPage.enterFatherName.sendKeys("Abraham");
-        studentAdmissionsPage.enterFatherNumber.sendKeys("1234567890");
-        studentAdmissionsPage.enterFatherJob.sendKeys("President");
-        studentAdmissionsPage.enterMotherName.sendKeys("Aretha");
-        studentAdmissionsPage.enterMotherJob.sendKeys("Singer");
-        studentAdmissionsPage.selectsGaurdian.click();
-        studentAdmissionsPage.enterGaurdianEmail.sendKeys("studentchroma@gmail.com");
-        studentAdmissionsPage.enterGaurdianAddress.sendKeys("CandyLane drive");
-        studentAdmissionsPage.saveButton.click();
+    @Then("user can delete student")
+    public void user_can_delete_student() throws InterruptedException {
+        studentAdmissionsPage.clickStudentCheckbox.click();
+        studentAdmissionsPage.clickDeleteButton.click();
+        Thread.sleep(2000);
+        driver.switchTo().alert().accept();
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
 
