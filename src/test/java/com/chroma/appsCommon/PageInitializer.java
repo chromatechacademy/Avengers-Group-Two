@@ -6,14 +6,14 @@ import com.chroma.pages.AgentModulePage;
 import com.chroma.pages.DashboardGraphPage;
 import com.chroma.pages.LoginPage;
 import com.chroma.pages.RealEstateLoginPage;
+import com.chroma.pages.StudentAdmissionsPage;
 import com.chroma.pages.SectionsPage;
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
 
-    // Instantiating LoginPage
-
     public static LoginPage loginPage;
+    public static StudentAdmissionsPage studentAdmissionsPage;
     public static RealEstateLoginPage realEstateLoginPage;
     /*This is the Dashboard Academics Page Locators */
     public static DashboardPageAcademics dashboardPageAcademics;
@@ -35,6 +35,8 @@ public class PageInitializer extends WebDriverUtils {
         feesCollectionPage = new FeesCollectionPage();
         dashboardGraphPage = new DashboardGraphPage();
         agentModulePage = new AgentModulePage();
+        studentAdmissionsPage = new StudentAdmissionsPage();
+
         
     }
 
