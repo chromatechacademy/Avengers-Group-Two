@@ -3,9 +3,11 @@ package com.chroma.stepDefinitions;
 import javax.xml.xpath.XPath;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.LoginStepsImpl;
+import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
 import cucumber.api.java.en.Given;
@@ -32,26 +34,25 @@ public class AddingMtplStudentsStepDef extends PageInitializer {
 
     @Then("user clicks on Student Admition")
     public void user_clicks_on_Student_Admition() {
-        WebDriverUtils.driver.findElement(By.xpath("//a[normalize-space()='Student Admission']//i[@class='fa fa-angle-double-right']")).click();
-        
+        WebDriverUtils.driver
+                .findElement(
+                        By.xpath("//a[normalize-space()='Student Admission']//i[@class='fa fa-angle-double-right']"));
     }
 
-    @Then("user enters data in {int}")
-    public void user_enters_data_in(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+    @Then("user enters data to {int}")
+    public void user_enters_data_to(Integer int1) {
+      
     }
 
     @Then("user enters number in {int}")
     public void user_enters_number_in(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        WebDriverUtils.driver.findElement(By.xpath("//input[@id='roll_no']"));
+
     }
 
     @Then("user enters data in Al")
     public void user_enters_data_in_Al() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        
     }
 
     @Then("user enters data in Smith")
@@ -124,5 +125,10 @@ public class AddingMtplStudentsStepDef extends PageInitializer {
     public void user_enters_data_in_Ck_gmail_com() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
+    }
+
+    @Then("appload picture in Select Photo box")
+    public void appload_picture_in_Select_Photo_box() {
+
     }
 }
