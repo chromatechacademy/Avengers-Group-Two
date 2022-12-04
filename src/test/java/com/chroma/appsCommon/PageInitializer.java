@@ -3,6 +3,7 @@ import com.chroma.pages.HrModPage;
 
 import com.chroma.pages.DashboardPageAcademics;
 import com.chroma.pages.DisableStudentPage;
+import com.chroma.pages.EnableStudentPage;
 import com.chroma.pages.FeesCollectionPage;
 import com.chroma.pages.AgentModulePage;
 import com.chroma.pages.DashboardGraphPage;
@@ -29,6 +30,7 @@ public class PageInitializer extends WebDriverUtils {
     //Instantiating the Agents page in Real estate website
     public static AgentModulePage agentModulePage;
     public static DisableStudentPage disableStudentPage;
+    public static EnableStudentPage enableStudentPage;
 
     public void initializeAllPages() {
 
@@ -40,7 +42,8 @@ public class PageInitializer extends WebDriverUtils {
         feesCollectionPage = new FeesCollectionPage();
         dashboardGraphPage = new DashboardGraphPage();
         agentModulePage = new AgentModulePage();
-        disableStudentPage= new DisableStudentPage();
+        disableStudentPage = new DisableStudentPage();
+        enableStudentPage = new EnableStudentPage();
     }
 
 }
