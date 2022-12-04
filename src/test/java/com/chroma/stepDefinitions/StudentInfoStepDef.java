@@ -18,10 +18,10 @@ public class StudentInfoStepDef extends PageInitializer{
 
 }
 
-    @Then("the following modules display Student Details {string}, Student Admission {string}, Disabled Students {string}, Bulk Delete {string}, Student Categories {string}, Student House {string}, Disable Reason {string}")
-    public void the_following_modules_display_Student_Details_Student_Admission_Disabled_Students_Bulk_Delete_Student_Categories_Student_House_Disable_Reason(String string, String string2, String string3, String string4, String string5, String string6, String string7) {
-    boolean isDashboardPageTextDisplayed = studentInfoPage.studentInfoModule.isDisplayed();
-    Assert.assertTrue(isDashboardPageTextDisplayed);
+    @Then("the following modules display Student Details, Student Admission, Disabled Students, Bulk Delete, Student Categories, Student House, Disable Reason")
+    public void the_following_modules_display_Student_Details_Student_Admission_Disabled_Students_Bulk_Delete_Student_Categories_Student_House_Disable_Reason() {
+    boolean isDashboardDisplayed = studentInfoPage.studentInfoModule.isDisplayed();
+    Assert.assertTrue(isDashboardDisplayed);
     CucumberLogUtils.logExtentScreenshot();
     CucumberLogUtils.logScreenShot();
 }
