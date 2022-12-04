@@ -5,8 +5,7 @@ import com.chroma.utils.CucumberLogUtils;
 
 public class AgentsModuleImpl extends PageInitializer {
 
-
-    public static void dashboardPage(){
+    public static void dashboardPage() {
 
         agentModulePage.agentsModuleText.click();
         agentModulePage.agentsdisplay.isDisplayed();
@@ -14,5 +13,5 @@ public class AgentsModuleImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         realEstateLoginPage.realEstateLoginButton.click();
 
-    }    
+    }
 }
