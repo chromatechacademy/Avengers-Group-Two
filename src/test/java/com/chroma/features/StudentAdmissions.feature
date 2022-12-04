@@ -17,15 +17,11 @@ Feature: Admitting a student, finding the student that was admitted, and then de
     And user selects "SDET", selects "Database Testing", enters "Aretha"
     Then Select Criteria page displays and student is viewed
 
-  @Progression @3
-  Scenario: Faculty member deletes student 
+  @Regression @AGT-12 @3
+  Scenario: Faculty member deletes student
     Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
     When user logs in with username "general@teacher.com" and password "123456"
     Then user clicks "Student Information"
-    And navigates to "Bulk Delete" 
+    And navigates to "Bulk Delete"
     Then user selects "SDET", selects "Database Testing"
     Then user can delete student
-    
-
-    
-    

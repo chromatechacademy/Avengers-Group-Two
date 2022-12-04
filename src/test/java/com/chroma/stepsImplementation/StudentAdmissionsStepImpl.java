@@ -9,8 +9,7 @@ import com.chroma.web.WebDriverUtils;
 public class StudentAdmissionsStepImpl extends PageInitializer {
 
         /**
-         * Use this method to enter credentials for Admissions page
-         * 
+         * Use this method to add student credentials to the student admissions page
          */
         public static void studentAdmissionsCredentials(String admissionNo, String rollNum, String classSelection,
                         String sectionSelection, String firstName,
@@ -53,6 +52,9 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
                 CucumberLogUtils.logScreenShot();
         }
 
+        /**
+         * Use this method to select class type and select section type in the student details page
+         */
         public static void studentDetailsPage(String classSelection, String sectionSelection, String firstName) {
                 CommonUtils.selectDropDownValue(classSelection,
                                 driver.findElement(By.xpath("//select[@name='class_id']")));
@@ -60,12 +62,13 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
                                 driver.findElement(By.xpath("//select[@name='section_id']")));
                 studentAdmissionsPage.searchByKeywordTextBox.sendKeys(firstName);
         }
-
+        /**
+         * Use this method to select class type and select section type in the bulk delete page
+         */
         public static void bulkDeletePage(String classSelection, String sectionSelection) {
                 CommonUtils.selectDropDownValue(classSelection,
                                 driver.findElement(By.xpath("//select[@name='class_id']")));
                 CommonUtils.selectDropDownValue(sectionSelection,
                                 driver.findElement(By.xpath("//select[@name='section_id']")));
         }
-
 }

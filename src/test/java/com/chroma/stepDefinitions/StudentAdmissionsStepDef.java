@@ -2,7 +2,6 @@ package com.chroma.stepDefinitions;
 
 import org.testng.Assert;
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.StudentAdmissionsPage;
 import com.chroma.stepsImplementation.StudentAdmissionsStepImpl;
 import com.chroma.utils.CucumberLogUtils;
 import cucumber.api.java.en.Then;
@@ -44,14 +43,12 @@ public class StudentAdmissionsStepDef extends PageInitializer {
     @Then("clicks on {string}")
     public void clicks_on(String studentDetails) {
         studentAdmissionsPage.studentDetailsButton.click();
-
     }
 
     @Then("user selects {string}, selects {string}, enters {string}")
     public void user_selects_selects_enters(String classSelection, String sectionSelection, String firstName) {
         StudentAdmissionsStepImpl.studentDetailsPage(classSelection, sectionSelection, firstName);
         studentAdmissionsPage.searchButton.click();
-
     }
 
     @Then("Select Criteria page displays and student is viewed")
@@ -65,14 +62,12 @@ public class StudentAdmissionsStepDef extends PageInitializer {
     @Then("navigates to {string}")
     public void navigates_to(String string) {
         studentAdmissionsPage.bulkDeleteButton.click();
-
     }
 
     @Then("user selects {string}, selects {string}")
     public void user_selects_selects(String classSelection, String sectionSelection) {
         StudentAdmissionsStepImpl.bulkDeletePage(classSelection, sectionSelection);
         studentAdmissionsPage.searchButtonBulkDeletePage.click();
-
     }
 
     @Then("user can delete student")
@@ -83,7 +78,6 @@ public class StudentAdmissionsStepDef extends PageInitializer {
         driver.switchTo().alert().accept();
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
-
     }
 
 }
