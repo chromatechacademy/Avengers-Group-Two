@@ -1,7 +1,6 @@
 package com.chroma.web;
 
 import java.time.Duration;
-
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +21,7 @@ import io.github.bonigarcia.wdm.config.OperatingSystem;
 public class WebDriverUtils {
 
     public static WebDriver driver;
+    
 
     public static void setUp() {
 

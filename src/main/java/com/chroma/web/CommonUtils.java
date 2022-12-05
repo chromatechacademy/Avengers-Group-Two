@@ -157,9 +157,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * 
 	 * @param nameOrId
 	 */
-
 	public static void switchToFrame(String nameOrId) {
-
 		try {
 			driver.switchTo().frame(nameOrId);
 		} catch (NoSuchFrameException e) {
@@ -179,10 +177,8 @@ public class CommonUtils extends WebDriverUtils {
 			System.out.println("Frame is not present.");
 		}
 	}
-
 	/**
 	 * This method will switch to the frame
-	 * 
 	 * @param index
 	 */
 	public static void switchToFrame(int index) {
@@ -280,7 +276,6 @@ public class CommonUtils extends WebDriverUtils {
 	public static void waitForClickability(WebElement element) {
 		getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
 	}
-
 	/**
 	 * This method will wait until element becomes visible
 	 * 
@@ -289,7 +284,6 @@ public class CommonUtils extends WebDriverUtils {
 	public static void waitForVisibility(WebElement element) {
 		getWaitObject().until(ExpectedConditions.visibilityOf(element));
 	}
-
 	/**
 	 * This method will wait until element becomes invisible
 	 * 
@@ -483,10 +477,10 @@ public class CommonUtils extends WebDriverUtils {
  * 
  * Use below method to assert actual String value with an expected String value	
  */
-	public static void assertEquals(String expected, String actual) {
+	public static void assertEquals(String actual, String expected) {
 		
 		try {
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 		}
 		catch(AssertionError e) {
 
