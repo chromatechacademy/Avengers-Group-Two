@@ -4,7 +4,9 @@ import com.chroma.pages.AgentModulePage;
 import com.chroma.pages.DashboardGraphPage;
 import com.chroma.pages.LoginPage;
 import com.chroma.pages.RealEstateLoginPage;
-import com.chroma.pages.AdmissionMtplStudentsPage;
+import com.chroma.pages.StudentAdmissionPage;
+import com.chroma.pages.StudentInformationPage;
+
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
@@ -17,8 +19,10 @@ public class PageInitializer extends WebDriverUtils {
     public static DashboardGraphPage dashboardGraphPage;
     // Instantiating the Agents page in Real estate website
     public static AgentModulePage agentModulePage;
+    // Instantialing the Student Information Page
+    public static StudentInformationPage studentInformationPage;
     // Instantialing the Student Admission Page
-    public static AdmissionMtplStudentsPage admissionMtplStudentsPage;
+    public static StudentAdmissionPage studentAdmissionPage;
 
     public void initializeAllPages() {
 
@@ -26,7 +30,8 @@ public class PageInitializer extends WebDriverUtils {
         realEstateLoginPage = new RealEstateLoginPage();
         dashboardGraphPage = new DashboardGraphPage();
         agentModulePage = new AgentModulePage();
-        admissionMtplStudentsPage = new AdmissionMtplStudentsPage();
+        studentInformationPage = new StudentInformationPage();
+        studentAdmissionPage = new StudentAdmissionPage();
 
     }
 
