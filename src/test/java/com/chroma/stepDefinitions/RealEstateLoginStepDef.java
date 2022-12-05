@@ -1,8 +1,5 @@
 package com.chroma.stepDefinitions;
 
-import javax.xml.xpath.XPath;
-
-import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.chroma.appsCommon.PageInitializer;
