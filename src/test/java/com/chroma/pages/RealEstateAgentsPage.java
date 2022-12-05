@@ -12,22 +12,27 @@ public class RealEstateAgentsPage {
     @FindBy(xpath = "//button[normalize-space()='Add Now']")
     public WebElement addNow;
 
-    /* First Name, Last Name, Email, Contact Number, Password, and Retype Password textboxes */
+    /* First Name textbox */
     @FindBy(xpath = "//input[@name='fname']")
     public WebElement firstNameTextbox;
 
+    /* Last Name textbox */
     @FindBy(xpath = "//input[@name='lname']")
     public WebElement lastNameTextbox;
 
+    /* Email textbox */
     @FindBy(xpath = "//input[@name='email']")
     public WebElement emailTextbox;
 
+    /* Contact Number textbox */
     @FindBy(xpath = "//input[@name='phone']")
     public WebElement contactNumberTextbox;
 
+    /* Password textbox */
     @FindBy(xpath = "//input[@name='pass']")
     public WebElement passwordTextbox;
 
+    /* Retype Password textbox */
     @FindBy(xpath = "//input[@name='cpass']")
     public WebElement retypePasswordTextbox;
 
