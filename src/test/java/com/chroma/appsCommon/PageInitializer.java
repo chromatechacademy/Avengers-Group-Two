@@ -2,6 +2,7 @@ package com.chroma.appsCommon;
 
 import com.chroma.pages.DashboardPageAcademics;
 import com.chroma.pages.FeesCollectionPage;
+import com.chroma.pages.AddDeleteSectionsPage;
 import com.chroma.pages.AgentModulePage;
 import com.chroma.pages.DashboardGraphPage;
 import com.chroma.pages.LoginPage;
@@ -25,6 +26,7 @@ public class PageInitializer extends WebDriverUtils {
     public static DashboardGraphPage dashboardGraphPage;
     //Instantiating the Agents page in Real estate website
     public static AgentModulePage agentModulePage;
+    public static AddDeleteSectionsPage addDeleteSectionsPage;
 
     public void initializeAllPages() {
 
@@ -36,6 +38,8 @@ public class PageInitializer extends WebDriverUtils {
         dashboardGraphPage = new DashboardGraphPage();
         agentModulePage = new AgentModulePage();
         studentAdmissionsPage = new StudentAdmissionsPage();
+        addDeleteSectionsPage = new AddDeleteSectionsPage();
+
 
         
     }
