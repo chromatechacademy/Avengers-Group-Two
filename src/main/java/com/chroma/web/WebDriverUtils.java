@@ -21,6 +21,7 @@ import io.github.bonigarcia.wdm.config.OperatingSystem;
 public class WebDriverUtils {
 
     public static WebDriver driver;
+    
 
     public static void setUp() {
 
