@@ -14,9 +14,10 @@ public class EnablingStudentFileDef extends PageInitializer {
     }
 
     @Then("user will click Enabling button")
-    public void user_will_click_Enabling_button() {
+    public void user_will_click_Enabling_button() throws InterruptedException {
         enableStudentPage.enablingButton.click();
         driver.switchTo().alert().accept();
+        Thread.sleep(5000);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
     }

@@ -46,8 +46,9 @@ public class DisableStudentFileDef extends PageInitializer {
     }
 
     @Then("clicks Save button")
-    public void clicks_Save_button() {
+    public void clicks_Save_button() throws InterruptedException {
         disableStudentPage.saveButton.click();
+        Thread.sleep(5000);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
 
