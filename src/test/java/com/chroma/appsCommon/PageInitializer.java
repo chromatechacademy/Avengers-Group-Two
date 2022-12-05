@@ -1,44 +1,42 @@
 package com.chroma.appsCommon;
-<<<<<<< HEAD
 import com.chroma.pages.DashboardHomeworkPage;
 import com.chroma.pages.DashboardStudentInformationPage;
-=======
-
 import com.chroma.pages.DashboardPageAcademics;
 import com.chroma.pages.FeesCollectionPage;
 import com.chroma.pages.AgentModulePage;
 import com.chroma.pages.DashboardGraphPage;
->>>>>>> 3f9b53eea2308cbcaad816eba34aabab5069388e
 import com.chroma.pages.LoginPage;
 import com.chroma.pages.RealEstateAgentsDashboardPage;
 import com.chroma.pages.RealEstateAgentsPage;
 import com.chroma.pages.RealEstateLoginPage;
-<<<<<<< HEAD
 import com.chroma.pages.StudentDetailsPage;
 import com.chroma.pages.EditStudentPage;
-=======
 import com.chroma.pages.StudentAdmissionsPage;
 import com.chroma.pages.SectionsPage;
->>>>>>> 3f9b53eea2308cbcaad816eba34aabab5069388e
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
-
+    /* This is the CTSMS Login Page */
     public static LoginPage loginPage;
-<<<<<<< HEAD
 
-=======
+    /* This is the CTSMS Student Admissions Page Locator */
     public static StudentAdmissionsPage studentAdmissionsPage;
->>>>>>> 3f9b53eea2308cbcaad816eba34aabab5069388e
+
+    /* This is the Real Estate Login Page Locator */
     public static RealEstateLoginPage realEstateLoginPage;
+
     /*This is the Dashboard Academics Page Locators */
     public static DashboardPageAcademics dashboardPageAcademics;
+
     /*This is the Sections Page Locators */
     public static SectionsPage sectionsPage;
+
     /*This is the Sections Page Locators */
     public static FeesCollectionPage feesCollectionPage;
+
     //Instatiating the dashboard graph pages in Real estate website
     public static DashboardGraphPage dashboardGraphPage;
+
     //Instantiating the Agents page in Real estate website
     public static AgentModulePage agentModulePage;
 
@@ -63,7 +61,6 @@ public class PageInitializer extends WebDriverUtils {
         agentModulePage = new AgentModulePage();
         studentAdmissionsPage = new StudentAdmissionsPage();
 
-<<<<<<< HEAD
         dashboardHomeworkPage = new DashboardHomeworkPage();
 
         dashboardStudentInformationPage = new DashboardStudentInformationPage();
@@ -72,9 +69,6 @@ public class PageInitializer extends WebDriverUtils {
 
         realEstateAgentsDashboardPage = new RealEstateAgentsDashboardPage();
         realEstateAgentsPage = new RealEstateAgentsPage();
-=======
-        
->>>>>>> 3f9b53eea2308cbcaad816eba34aabab5069388e
     }
 
 }
