@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 		"junit:target/cucumber.xml", "rerun:target/failed.txt",
 		"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"  }, 
 		features = "src/test/java/com/chroma/features", 
-		glue = "com.chroma.stepDefinitions", 
-		tags = "@1, @2, @3", 
-		dryRun =  false, 
+		glue = "com.chroma.stepDefinitions",
+		tags = "@Progression", 
+		dryRun =  false,
 		monochrome = true, 
 		strict = true
 ) 

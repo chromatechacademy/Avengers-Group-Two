@@ -8,4 +8,3 @@ Feature: Login to the Real Estate portal with valid credentials
         Examples:
             | Website                                                                                 | Username              | Password |
             | "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php" | "admin@mexil.it"      | "123456" |
-            | "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/login.php"       | "general@teacher.com" | "123456" |
