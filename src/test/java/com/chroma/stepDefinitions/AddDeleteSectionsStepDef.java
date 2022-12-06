@@ -1,9 +1,7 @@
 package com.chroma.stepDefinitions;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -30,6 +28,7 @@ public class AddDeleteSectionsStepDef extends PageInitializer {
     @Then("user clicks and deletes Bag of Money")
     public void user_clicks_and_deletes_Bag_of_Money() {
         addDeleteSectionsPage.deleteButton.click();
+        CommonUtils.sleep(2000);
         driver.switchTo().alert().accept();
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
@@ -52,6 +51,7 @@ public class AddDeleteSectionsStepDef extends PageInitializer {
     @Then("user can delete class")
     public void user_can_delete_class() {
         addDeleteSectionsPage.deleteClassButton.click();
+        CommonUtils.sleep(2000);
         CommonUtils.acceptAlert();
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
