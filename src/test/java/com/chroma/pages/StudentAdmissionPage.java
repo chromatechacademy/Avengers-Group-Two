@@ -8,12 +8,21 @@ import com.chroma.web.WebDriverUtils;
 
 public class StudentAdmissionPage {
     @FindBy(xpath = "//input[@id='admission_no']")
-    public WebElement admissionNo;
+    public WebElement admissionNoBox;
     @FindBy(xpath = "//input[@id='roll_no']")
-    public WebElement rollNo;
+    public WebElement rollNoBox;
     @FindBy(xpath = "//input[@id='firstname']")
-    public WebElement firstName;
-    
+    public WebElement firstNameBox;
+    @FindBy(xpath = "//input[@id='lastname']")
+    public WebElement lastNameBox;
+    @FindBy(xpath = "//input[@id='dob']")
+    public WebElement dateOfBirthDropDown;
+    @FindBy(xpath = "(//input[@id='file'])[1]")
+    public WebElement studentPhotoElement;
+
+
+
+   
 
 
 

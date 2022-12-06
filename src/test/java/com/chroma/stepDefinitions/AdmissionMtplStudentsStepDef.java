@@ -1,18 +1,23 @@
 package com.chroma.stepDefinitions;
 
+import javax.swing.Action;
+
 import org.apache.velocity.runtime.directive.Break;
 import org.checkerframework.checker.units.qual.s;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.stepsImplementation.LoginStepsImpl;
+import com.chroma.utils.Constans;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
+import cucumber.api.java.an.Y;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -22,6 +27,7 @@ import dev.failsafe.internal.util.Assert;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 
 public class AdmissionMtplStudentsStepDef extends PageInitializer {
+
     @Given("user is on a CTSMS home page {string}")
     public void user_is_on_a_CTSMS_home_page(String url) {
         WebDriverUtils.driver.get(url);
@@ -55,36 +61,91 @@ public class AdmissionMtplStudentsStepDef extends PageInitializer {
 
     @Then("enters data in {int}")
     public void enters_data_in(Integer admInteger) {
-        studentAdmissionPage.admissionNo.click();
+        studentAdmissionPage.admissionNoBox.click();
         CommonUtils.sleep(3000);
-        studentAdmissionPage.admissionNo.sendKeys(admInteger.toString());
+        studentAdmissionPage.admissionNoBox.sendKeys(admInteger.toString());
+        CommonUtils.sleep(3000);
     }
 
     @Then("user enters number in {int}")
     public void user_enters_number_in(Integer rollNoInteger) {
-        studentAdmissionPage.rollNo.click();
+        studentAdmissionPage.rollNoBox.click();
         CommonUtils.sleep(3000);
-        studentAdmissionPage.rollNo.sendKeys(rollNoInteger.toString());
+        studentAdmissionPage.rollNoBox.sendKeys(rollNoInteger.toString());
+        CommonUtils.sleep(3000);
     }
 
     @Then("user enters data in Al")
     public void user_enters_data_in_Al() {
-        studentAdmissionPage.firstName.click();
-        studentAdmissionPage.firstName.sendKeys();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        studentAdmissionPage.firstNameBox.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        studentAdmissionPage.firstNameBox.sendKeys("Al".toString());
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
     @Then("user enters data in Bo")
     public void user_enters_data_in_Bo() {
-        studentAdmissionPage.firstName.click();
-        studentAdmissionPage.firstName.sendKeys();
+        studentAdmissionPage.firstNameBox.click();
+        studentAdmissionPage.firstNameBox.sendKeys("Bo".toString());
 
     }
 
     @Then("user enters data in Ck")
     public void user_enters_data_in_Ck() {
-        studentAdmissionPage.firstName.click();
-        studentAdmissionPage.firstName.sendKeys();
+        studentAdmissionPage.firstNameBox.click();
+        studentAdmissionPage.firstNameBox.sendKeys("Ck".toString());
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Then("user enters data in Smith")
+    public void user_enters_data_in_Smith() {
+        studentAdmissionPage.lastNameBox.click();
+        studentAdmissionPage.lastNameBox.sendKeys("Ck".toString());
+    }
+
+    @Then("user enters data in {string}")
+    public void user_enters_data_in(String dateOfBirth) {
+
+        studentAdmissionPage.dateOfBirthDropDown.click();
+        studentAdmissionPage.dateOfBirthDropDown.sendKeys(dateOfBirth.toString());
+        CommonUtils.sleep(3000);
+    }
+
+    @Then("user drags Al in a box")
+    public void user_drags_Al_in_a_box() {
+
+        CommonUtils.sleep(3000);
+        //studentAdmissionPage.studentPhotoElement.click();
+        CommonUtils.sleep(3000);
+        studentAdmissionPage.studentPhotoElement.sendKeys(Constans.studentPhoto);
+        CommonUtils.sleep(3000);
+    }
+
+    @Then("user drags Bo in a box")
+    public void user_drags_Bo_in_a_box() {
+
+    }
+
+    @Then("user drags Ck in a box")
+    public void user_drags_Ck_in_a_box() {
 
     }
 }
