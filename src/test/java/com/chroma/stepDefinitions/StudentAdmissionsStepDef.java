@@ -4,6 +4,8 @@ import org.testng.Assert;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.StudentAdmissionsStepImpl;
 import com.chroma.utils.CucumberLogUtils;
+import com.chroma.web.CommonUtils;
+
 import cucumber.api.java.en.Then;
 
 public class StudentAdmissionsStepDef extends PageInitializer {
@@ -71,13 +73,11 @@ public class StudentAdmissionsStepDef extends PageInitializer {
     }
 
     @Then("user can delete student")
-    public void user_can_delete_student() throws InterruptedException {
+    public void user_can_delete_student() {
         studentAdmissionsPage.clickStudentCheckbox.click();
         studentAdmissionsPage.clickDeleteButton.click();
-        Thread.sleep(2000);
-        driver.switchTo().alert().accept();
+        CommonUtils.acceptAlert();
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
     }
-
 }

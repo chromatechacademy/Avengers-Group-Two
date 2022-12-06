@@ -17,44 +17,55 @@ import com.chroma.pages.SectionsPage;
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
-    /* This is the CTSMS Login Page */
+
+    /* LoginPage instance */
     public static LoginPage loginPage;
 
-    /* This is the CTSMS Student Admissions Page Locator */
+    /* StudentAdmissionsPage instance */
     public static StudentAdmissionsPage studentAdmissionsPage;
 
-    /* This is the Real Estate Login Page Locator */
+    /* RealEstateLoginPage instance */
     public static RealEstateLoginPage realEstateLoginPage;
 
-    /*This is the Dashboard Academics Page Locators */
+    /* DashboardPageAcademics instance */
     public static DashboardPageAcademics dashboardPageAcademics;
 
-    /*This is the Sections Page Locators */
+    /* SectionsPage instance */
     public static SectionsPage sectionsPage;
 
-    /*This is the Sections Page Locators */
+    /* FeesCollectionPage instance */
     public static FeesCollectionPage feesCollectionPage;
 
-    //Instatiating the dashboard graph pages in Real estate website
+    /* DashboardGraphPage instance */
     public static DashboardGraphPage dashboardGraphPage;
 
-    //Instantiating the Agents page in Real estate website
+    /* AgentModulePage instance */ 
     public static AgentModulePage agentModulePage;
+
+    /* AddDeleteSections instance */
     public static AddDeleteSectionsPage addDeleteSectionsPage;
 
+    /* DashboardHomework instance */
     public static DashboardHomeworkPage dashboardHomeworkPage;
 
+    /* DashboardStudent instance */
     public static DashboardStudentInformationPage dashboardStudentInformationPage;
+
+    /* StudentDetail instance */
     public static StudentDetailsPage studentDetailsPage;
+
+    /* EditStudent instance */
     public static EditStudentPage editStudentPage;
 
+    /* RealEstateAgentsDashboard instance */
     public static RealEstateAgentsDashboardPage realEstateAgentsDashboardPage;
+
+    /* RealEstateAgents instance */
     public static RealEstateAgentsPage realEstateAgentsPage;
 
     public void initializeAllPages() {
-
+        // create instances of all pages and assign them to the variables
         loginPage = new LoginPage();
-
         realEstateLoginPage = new RealEstateLoginPage();
         dashboardPageAcademics = new DashboardPageAcademics();
         sectionsPage = new SectionsPage();
@@ -63,16 +74,11 @@ public class PageInitializer extends WebDriverUtils {
         agentModulePage = new AgentModulePage();
         studentAdmissionsPage = new StudentAdmissionsPage();
         addDeleteSectionsPage = new AddDeleteSectionsPage();
-
-
         dashboardHomeworkPage = new DashboardHomeworkPage();
-
         dashboardStudentInformationPage = new DashboardStudentInformationPage();
         studentDetailsPage = new StudentDetailsPage();
         editStudentPage = new EditStudentPage();
-
         realEstateAgentsDashboardPage = new RealEstateAgentsDashboardPage();
         realEstateAgentsPage = new RealEstateAgentsPage();
     }
-
 }
