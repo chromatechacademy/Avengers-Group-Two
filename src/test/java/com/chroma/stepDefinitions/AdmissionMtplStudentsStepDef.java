@@ -1,6 +1,8 @@
 package com.chroma.stepDefinitions;
 
 import javax.swing.Action;
+import org.testng.Assert;
+import org.apache.commons.digester.SetNestedPropertiesRule;
 import org.apache.velocity.runtime.directive.Break;
 import org.checkerframework.checker.units.qual.s;
 import org.openqa.selenium.By;
@@ -8,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.stepsImplementation.LoginStepsImpl;
 import com.chroma.utils.Constans;
 import com.chroma.utils.CucumberLogUtils;
@@ -55,7 +56,6 @@ public class AdmissionMtplStudentsStepDef extends PageInitializer {
     @Then("user enters number in {int}")
     public void user_enters_number_in(Integer rollNoInteger) {
         studentAdmissionPage.rollNoBox.click();
-        CommonUtils.sleep(3000);
         studentAdmissionPage.rollNoBox.sendKeys(rollNoInteger.toString());
     }
 
@@ -109,10 +109,10 @@ public class AdmissionMtplStudentsStepDef extends PageInitializer {
 
     @Then("user enters Ck@gmail.com in Emailbox")
     public void user_enters_Ck_gmail_com_in_Emailbox() {
-        CommonUtils.sleep(3000);
         studentAdmissionPage.studentEmailBox.click();
         CommonUtils.sleep(3000);
         studentAdmissionPage.studentEmailBox.sendKeys("Ck@gmail.com".toString());
+        CommonUtils.sleep(3000);
     }
 
     @Then("user makes selection in SDET dropdown")
@@ -123,10 +123,10 @@ public class AdmissionMtplStudentsStepDef extends PageInitializer {
         studentAdmissionPage.classSDET_DropDown.click();
     }
 
-    @Then("user makes selection in a Git\\/GitHub  dropdown")
-    public void user_makes_selection_in_a_Git_GitHub_dropdown() {
+    @Then("user makes selection in a {string}  dropdown")
+    public void user_makes_selection_in_a_dropdown(String gitSelectioString) {
         studentAdmissionPage.classSelectioElement.click();
-        studentAdmissionPage.selectGitDropDown.click();
+        studentAdmissionPage.classSelectioElement.sendKeys(gitSelectioString.toString());
     }
 
     @Then("user makes selection  in a male  dropdown")
@@ -138,6 +138,21 @@ public class AdmissionMtplStudentsStepDef extends PageInitializer {
     @Then("user makes selection in a Moe dropdown")
     public void user_makes_selection_in_a_Moe_dropdown() {
         studentAdmissionPage.studentCategoryDropD.click();
+
+    }
+
+    @Then("user makes selection to a Moe dropdown")
+    public void user_makes_selection_to_a_Moe_dropdown() {
+        studentAdmissionPage.studentCategoryDropD.click();
+        studentAdmissionPage.studentCategoryMoeDDown.click();
+    }
+
+    @Then("user selects blood type in a {string} dropdown")
+    public void user_selects_blood_type_in_a_dropdown(String A) {
+        CommonUtils.sleep(3000);
+        studentAdmissionPage.studentBloodGDropDown.click();
+        CommonUtils.sleep(3000);
+        studentAdmissionPage.studentBloodGDropDown.sendKeys(A.toString());
 
     }
 
@@ -161,12 +176,52 @@ public class AdmissionMtplStudentsStepDef extends PageInitializer {
         studentAdmissionPage.studentPhotoElement.sendKeys(Constans.studentPhoto);
         CommonUtils.sleep(3000);
     }
-    @Then("user makes selection to a Moe dropdown")
-public void user_makes_selection_to_a_Moe_dropdown() {
-    studentAdmissionPage.studentCategoryDropD.click();
-    studentAdmissionPage.studentCategoryMoeDDown.click();
-}
 
+    @Then("user enters {int} in a box")
+    public void user_enters_in_a_box(Integer mobileNumber) {
+        studentAdmissionPage.studentMobileNumberBox.click();
+        studentAdmissionPage.studentMobileNumberBox.sendKeys(mobileNumber.toString());
+    }
 
+    @Then("user enters {double} in a box")
+    public void user_enters_in_a_box(Double student_height) {
+        studentAdmissionPage.studentHeightBox.click();
+        studentAdmissionPage.studentHeightBox.sendKeys(student_height.toString());
+    }
+
+    @Then("user enters students {int}kl")
+    public void user_enters_students_kl(Integer student_weight) {
+        CommonUtils.sleep(3000);
+        studentAdmissionPage.studentWeightBox.click();
+        CommonUtils.sleep(3000);
+        studentAdmissionPage.studentWeightBox.sendKeys(student_weight.toString());
+
+    }
+
+    @Then("selects Father in the checkbox")
+    public void selects_Father_in_the_checkbox() {
+        studentAdmissionPage.studentGardianIsFather.click();
+    }
+
+    @Then("user enters {string}")
+    public void user_enters(String gardian_Name) {
+        studentAdmissionPage.studentGardianNameBox.click();
+        studentAdmissionPage.studentGardianNameBox.sendKeys(gardian_Name.toString());
+
+    }
+
+    @Then("user enters the {string} in a phone box")
+    public void user_enters_the_in_a_phone_box(String gardian_phoneNo) {
+        studentAdmissionPage.studentGardianPhoneNoBox.click();
+        studentAdmissionPage.studentGardianPhoneNoBox.sendKeys(gardian_phoneNo.toString());
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
+
+    }
+
+    @Then("clicks SAVE")
+    public void clicks_SAVE() {
+        studentAdmissionPage.save_Btn.click();
+    }
 
 }

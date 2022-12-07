@@ -23,6 +23,7 @@ public class PageInitializer extends WebDriverUtils {
     public static StudentInformationPage studentInformationPage;
     // Instantialing the Student Admission Page
     public static StudentAdmissionPage studentAdmissionPage;
+    // Instantialing the Bulk Delete Page
 
     public void initializeAllPages() {
 
